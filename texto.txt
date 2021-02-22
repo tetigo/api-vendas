@@ -1,0 +1,27 @@
+configs em aluiziodeveloper.com.br
+
+npm init -y
+
+yard add typescript ts-node-dev @types/node tsconfig-paths -D
+
+yarn tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowJs true --noImplicitAny true
+
+instalar editorConfig no vscode
+
+yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+yarn add prettier -D
+
+yarn add express cors express-async-errors
+
+yarn add -D @types/express @types/cors
+
+yarn add typeorm reflect-metadata pg
+
+docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+
+instalar DBeaver
+
+
+
+
