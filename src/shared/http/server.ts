@@ -2,6 +2,8 @@ import 'reflect-metadata' //precisa ser o primeiro
 import express, { NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import routes from './routes'
+
+//esse uso de @ no path foi criado ligacao no tsconfig.json
 import AppError from '@shared/errors/AppError'
 import '@shared/typeorm' // faz conexão com banco automaticamente
 
