@@ -1,0 +1,31 @@
+GET http://localhost:3333/products
+
+###
+
+POST http://localhost:3333/products
+Content-Type: application/json
+
+{
+  "name": "book 1",
+  "price": 20,
+  "quantity": 5
+}
+
+###
+
+GET http://localhost:3333/products/xxxxxxxxx
+
+###
+
+PUT http://localhost:3333/products/xxxxxx
+Content-Type: application/json
+
+{
+  "name": "book 21",
+  "price": 2034,
+  "quantity": 58
+}
+
+DELETE http://localhost:3333/products/xxxxxx
+Content-Type: application/json
+
