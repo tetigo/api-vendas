@@ -1,5 +1,4 @@
 import AppError from "@shared/errors/AppError";
-import { id } from "date-fns/locale";
 import { getCustomRepository } from "typeorm";
 import Product from "../typeorm/entities/product";
 import { ProductsRepository } from "../typeorm/repositories/ProductsRepository";
