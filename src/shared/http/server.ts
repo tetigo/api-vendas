@@ -1,7 +1,9 @@
 import 'reflect-metadata' //precisa ser o primeiro
 import express, { NextFunction, Request, Response } from 'express'
+import "express-async-errors"
 import cors from 'cors'
 import routes from './routes'
+import {errors} from 'celebrate'
 
 //esse uso de @ no path foi criado ligacao no tsconfig.json
 import AppError from '@shared/errors/AppError'
@@ -13,6 +15,8 @@ app.use(cors())
 app.use(express.json())
 
 app.use(routes)
+
+app.use(errors()) //erros lançados pelo Joi na validação com celebrate
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction)=>{
   if(error instanceof AppError){
