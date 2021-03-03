@@ -3,24 +3,24 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 @Entity('users')
 class User{
   @PrimaryGeneratedColumn('uuid')
-  id: string
+  id: string;
 
   @Column()
-  name: string
+  name: string;
 
   @Column()
-  email: string
+  email: string;
 
   @Column()
-  password: string
+  password: string;
 
   @Column()
-  avatar: string
+  avatar: string;
 
   @CreateDateColumn()
-  created_at: Date
+  created_at: Date;
 
   @UpdateDateColumn()
-  updated_at: Date
+  updated_at: Date;
 }
-export default User
+export default User;

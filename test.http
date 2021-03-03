@@ -6,26 +6,56 @@ POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-  "name": "book 1",
+  "name": "book 2",
   "price": 20,
   "quantity": 5
 }
 
 ###
 
-GET http://localhost:3333/products/xxxxxxxxx
+GET http://localhost:3333/products/8ab8df70-c3e1-43b9-811e-bad505270d59
 
 ###
 
-PUT http://localhost:3333/products/xxxxxx
+PUT http://localhost:3333/products/34f3f482-8441-4682-b1e4-fa02286984c6
 Content-Type: application/json
 
 {
-  "name": "book 21",
-  "price": 2034,
-  "quantity": 58
+  "name": "book 22",
+  "price": 2035,
+  "quantity": 59
 }
 
-DELETE http://localhost:3333/products/xxxxxx
+###
+
+DELETE http://localhost:3333/products/8ab8df70-c3e1-43b9-811e-bad505270d59
 Content-Type: application/json
+
+###################################################
+
+GET http://localhost:3333/users
+
+###
+
+POST http://localhost:3333/users
+Content-Type: application/json
+
+{
+  "name": "Tiago6",
+  "email": "tetigo6@gmail.com",
+  "password": "12345"
+}
+
+###
+
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "tetigo@gmail.com",
+  "password": "12345"
+}
+
+###
+
 
