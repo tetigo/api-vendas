@@ -13,6 +13,7 @@ class CreateSessionService{
   public async execute({email, password}: IRequest): Promise<User>{
     const usersRepository = getCustomRepository(UsersRepository)
     const user = await usersRepository.findByEmail(email)
+    console.log(user)
     if(!user){
       throw new AppError('Invalid Combination of Email/Password1', 401)
     }

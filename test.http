@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3333/products/8ab8df70-c3e1-43b9-811e-bad505270d59
+GET http://localhost:3333/products/34f3f482-8441-4682-b1e4-fa02286984c6
 
 ###
 
@@ -21,14 +21,14 @@ PUT http://localhost:3333/products/34f3f482-8441-4682-b1e4-fa02286984c6
 Content-Type: application/json
 
 {
-  "name": "book 22",
-  "price": 2035,
-  "quantity": 59
+  "name": "book 23",
+  "price": 2033,
+  "quantity": 599
 }
 
 ###
 
-DELETE http://localhost:3333/products/8ab8df70-c3e1-43b9-811e-bad505270d59
+DELETE http://localhost:3333/products/fafc16f2-acf6-44f5-8466-1ec2665e1f5c
 Content-Type: application/json
 
 ###################################################
@@ -52,10 +52,13 @@ POST http://localhost:3333/sessions
 Content-Type: application/json
 
 {
-  "email": "tetigo@gmail.com",
+  "email": "tetigo6@gmail.com",
   "password": "12345"
 }
 
 ###
 
+GET http://localhost:3333/sessions
+
+###
 
