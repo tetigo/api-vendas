@@ -3,25 +3,35 @@ import AppError from "@shared/errors/AppError"
 import { getCustomRepository } from "typeorm"
 import User from "../typeorm/entities/users"
 import UsersRepository from "../typeorm/repositories/UsersRepository"
+import { sign } from "jsonwebtoken";
+import authConfig from "@config/auth";
 
-interface IRequest{
+interface IRequest {
   email: string,
   password: string
 }
 
-class CreateSessionService{
-  public async execute({email, password}: IRequest): Promise<User>{
+interface IResponse {
+  user: User,
+  token: string
+}
+
+class CreateSessionService {
+  public async execute({ email, password }: IRequest): Promise<IResponse> {
     const usersRepository = getCustomRepository(UsersRepository)
     const user = await usersRepository.findByEmail(email)
-    console.log(user)
-    if(!user){
+    if (!user) {
       throw new AppError('Invalid Combination of Email/Password1', 401)
     }
     const isValidPass = await compare(password, user.password)
-    if(!isValidPass){
+    if (!isValidPass) {
       throw new AppError('Invalid Combination of Email/Password2', 403)
     }
-    return user
+    const token = sign({ patati: 'patata' }, authConfig.jwt.secret, {
+      subject: user.id,
+      expiresIn: authConfig.jwt.expiresIn,
+    })
+    return { user, token }
   }
 }
 export default CreateSessionService

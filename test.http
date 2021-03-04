@@ -34,6 +34,7 @@ Content-Type: application/json
 ###################################################
 
 GET http://localhost:3333/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTQ4ODI3NjUsImV4cCI6MTYxNDk2OTE2NSwic3ViIjoiNWM0ZGE1YjEtZjhlYi00YmE0LWExODMtZTk1ZWQzYTkxZGUwIn0.IpXUeiaaCrDK5i7duc700_V-PHD0OCoBcP4ifxByHcY
 
 ###
 
