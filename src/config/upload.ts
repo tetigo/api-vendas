@@ -7,6 +7,7 @@ import crypto from "crypto";
 // a partir de onde estamos e depois entrar na pasta uploads
 const uploadFolderPath = path.resolve(__dirname,'..','..','uploads')
 
+//exporta objeto de configuracao do multer
 export default {
   directory: uploadFolderPath,
   storage: multer.diskStorage({
