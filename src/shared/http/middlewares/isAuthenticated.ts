@@ -4,7 +4,7 @@ import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 
 interface ITokenPayload{
-  patati: string,
+  patati?: string,
   iat: number,
   exp: number,
   sub: string

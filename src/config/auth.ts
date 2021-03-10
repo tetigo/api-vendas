@@ -1,8 +1,8 @@
-import secret from './secret'
+import {secret, expiresIn} from './secret'
 export default {
   jwt: {
-    secret: secret,
-    expiresIn: '1d',
+    secret,
+    expiresIn,
   }
 }
 

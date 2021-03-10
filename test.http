@@ -6,18 +6,18 @@ POST http://localhost:3333/products
 Content-Type: application/json
 
 {
-  "name": "book 12",
-  "price": 201,
-  "quantity": 15
+  "name": "book 125",
+  "price": 2015,
+  "quantity": 155
 }
 
 ###
 
-GET http://localhost:3333/products/6a6b8f09-61ea-4616-9a16-8523dc57cc54
+GET http://localhost:3333/products/ea115c6b-23e4-461a-a1e0-9366c9ed8602
 
 ###
 
-PUT http://localhost:3333/products/6a6b8f09-61ea-4616-9a16-8523dc57cc54
+PUT http://localhost:3333/products/ea115c6b-23e4-461a-a1e0-9366c9ed8602
 Content-Type: application/json
 
 {
@@ -28,13 +28,13 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3333/products/fafc16f2-acf6-44f5-8466-1ec2665e1f5c
+DELETE http://localhost:3333/products/894970ec-29f2-4de6-9754-67d8d1fc596b
 Content-Type: application/json
 
 ###################################################
 
 GET http://localhost:3333/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTQ4ODI3NjUsImV4cCI6MTYxNDk2OTE2NSwic3ViIjoiNWM0ZGE1YjEtZjhlYi00YmE0LWExODMtZTk1ZWQzYTkxZGUwIn0.IpXUeiaaCrDK5i7duc700_V-PHD0OCoBcP4ifxByHcY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTUzOTgzMDMsImV4cCI6MTYxNTQ4NDcwMywic3ViIjoiODlmMTMwMzAtZGQ5NC00NmMxLTkxYjctYzM2ZGQxYzJiZDU2In0.7CKjF_3lqKTnXfBGN4oLIsIt9KtHV_9rdxzGU_Wi1R8
 
 ###
 
@@ -42,9 +42,9 @@ POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "name": "Tiago6",
-  "email": "tetigo6@gmail.com",
-  "password": "12345"
+  "name": "Tiago4",
+  "email": "tetigo4@gmail.com",
+  "password": "1234"
 }
 
 ###
@@ -53,8 +53,8 @@ POST http://localhost:3333/sessions
 Content-Type: application/json
 
 {
-  "email": "tetigo6@gmail.com",
-  "password": "12345"
+  "email": "tetigo4@gmail.com",
+  "password": "123123"
 }
 
 ###
@@ -75,7 +75,24 @@ Content-Type: image/jpeg
 
 ###
 
+POST http://localhost:3333/password/forgot
+Content-Type: application/json
 
+{
+  "email": "tetigo4@gmail.com"
+}
 
+###
+
+POST http://localhost:3333/password/reset
+Content-Type: application/json
+
+{
+  "token": "fd931619-d024-43d4-86e2-7dd794c6578c",
+  "password": "123123",
+  "password_confirmation": "123123"
+}
+
+###
 
 
