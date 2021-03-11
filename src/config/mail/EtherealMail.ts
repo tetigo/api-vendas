@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer'
-import HandlebarsMailTemplate from './HandlebarsMailTemplate';
+import HandlebarsMailTemplateParser from './HandlebarsMailTemplateParser';
 
 interface IMailContact{
     name: string,
@@ -11,20 +11,20 @@ interface ITemplateVariable{
 }
 
 interface IParseMailTemplate{
-    template: string,
+    file: string,
     variables: ITemplateVariable
 }
 
 interface ISendMail {
     to: IMailContact,
-    from: IMailContact,
+    from?: IMailContact,
     subject: string,
     templateData: IParseMailTemplate
 }
 
 class EtherealMail {
     static async sendMail({ to, from, subject, templateData }: ISendMail): Promise<void> {
-        const handlebarsMailTemplate = new HandlebarsMailTemplate()
+        const handlebarsMailTemplateParser = new HandlebarsMailTemplateParser()
         
         const account = await nodemailer.createTestAccount();
         const transporter = nodemailer.createTransport({
@@ -46,7 +46,7 @@ class EtherealMail {
                 address: from?.email || 'equipe@apivendas.com.br',
             },
             subject,
-            html: await handlebarsMailTemplate.parse(templateData)
+            html: await handlebarsMailTemplateParser.parse(templateData)
         })
         console.log(`Message sent.: ${message.messageId}`)
         console.log(`Preview URL..: ${nodemailer.getTestMessageUrl(message)}`)
