@@ -5,8 +5,6 @@ import { Joi, Segments, celebrate } from "celebrate";
 const sessionsController = new SessionsController()
 const sessionsRouter = Router()
 
-sessionsRouter.get('/', sessionsController.index)
-
 sessionsRouter.post('/',
   celebrate({
     [Segments.BODY]: {

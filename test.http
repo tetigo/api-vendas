@@ -34,8 +34,7 @@ Content-Type: application/json
 ###################################################
 
 GET http://localhost:3333/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTUzOTgzMDMsImV4cCI6MTYxNTQ4NDcwMywic3ViIjoiODlmMTMwMzAtZGQ5NC00NmMxLTkxYjctYzM2ZGQxYzJiZDU2In0.7CKjF_3lqKTnXfBGN4oLIsIt9KtHV_9rdxzGU_Wi1R8
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1MDQ2MjgsImV4cCI6MTYxNTU5MTAyOCwic3ViIjoiODlmMTMwMzAtZGQ5NC00NmMxLTkxYjctYzM2ZGQxYzJiZDU2In0.hEktsJ5wQFAwaIdXkrzcE3gNAemPTndgLWQNbVGosQs
 ###
 
 POST http://localhost:3333/users
@@ -54,12 +53,8 @@ Content-Type: application/json
 
 {
   "email": "tetigo4@gmail.com",
-  "password": "123123"
+  "password": "1234"
 }
-
-###
-
-GET http://localhost:3333/sessions
 
 ###
 
@@ -95,4 +90,19 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3333/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1MDQ0NjMsImV4cCI6MTYxNTU5MDg2Mywic3ViIjoiODlmMTMwMzAtZGQ5NC00NmMxLTkxYjctYzM2ZGQxYzJiZDU2In0.cTn4WcVt-Pvq-ZkXtFFUN86QL23CN3OarB9jSaxFegE
 
+###
+
+PUT http://localhost:3333/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1MTA0MjEsImV4cCI6MTYxNTU5NjgyMSwic3ViIjoiYTA4ODIxOGMtYWQwNC00OTc5LWFmZjEtZmRkYjNmMTI1NGMzIn0.uZeYP8Z16W8LnDCIX2ciFgklg-ol9n4GrBP2EPuiW1U
+Content-Type: application/json
+
+{
+  "name": "Tigo",
+  "email": "best_email@gmail.com",
+  # "password": "abc",
+  # "password_confirmation": "abc",
+  "old_password": "abc"
+}
