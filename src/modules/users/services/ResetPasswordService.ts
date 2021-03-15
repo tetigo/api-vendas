@@ -1,5 +1,5 @@
 import AppError from "@shared/errors/AppError"
-import { compare, hash } from "bcryptjs"
+import { hash } from "bcryptjs"
 import { getCustomRepository } from "typeorm"
 import UsersRepository from "../typeorm/repositories/UsersRepository"
 import UsersTokensRepository from "../typeorm/repositories/UsersTokensRepository"
@@ -19,13 +19,11 @@ class ResetPasswordService {
         if (!userToken) {
             throw new AppError('User Token does not exists')
         }
-        //@ts-ignore
         const validDateTime = addHours(userToken.created_at, 2)
         if (isAfter(Date.now(), validDateTime)) {
             throw new AppError('Token expired')
         }
 
-        //@ts-ignore
         let user = await userRepository.findById(userToken.user_id)
         if (!user) {
             throw new AppError('User does not exists')
@@ -33,9 +31,7 @@ class ResetPasswordService {
         
         const newPassword = await hash(password, 8)
 
-        //@ts-ignore
         user.password = newPassword
-        //@ts-ignore
         await userRepository.save(user)
 
     }

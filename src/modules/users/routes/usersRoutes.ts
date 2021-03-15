@@ -13,9 +13,17 @@ const upload = multer(uploadConfig)
 
 usersRouter.get('/', isAuthenticated, usersController.index)
 
+// const userPostSchema={
+//   body:{
+//     name: Joi.string().required(),
+//     email: Joi.string().email().required(),
+//     password: Joi.string().required()
+//   }
+// }
 usersRouter.post('/',
+  // celebrate(userPostSchema),
   celebrate({
-    [Segments.BODY]: {
+    [Segments.BODY]:{
       name: Joi.string().required(),
       email: Joi.string().email().required(),
       password: Joi.string().required()

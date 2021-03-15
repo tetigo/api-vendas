@@ -41,9 +41,9 @@ POST http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "name": "Tiago4",
-  "email": "tetigo4@gmail.com",
-  "password": "1234"
+  "name": "Tiago8",
+  "email": "tetigo8@gmail.com",
+  "password": "12345678"
 }
 
 ###
@@ -52,8 +52,8 @@ POST http://localhost:3333/sessions
 Content-Type: application/json
 
 {
-  "email": "tetigo4@gmail.com",
-  "password": "1234"
+  "email": "tetigo8@gmail.com",
+  "password": "12345678"
 }
 
 ###
@@ -91,18 +91,58 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3333/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1MDQ0NjMsImV4cCI6MTYxNTU5MDg2Mywic3ViIjoiODlmMTMwMzAtZGQ5NC00NmMxLTkxYjctYzM2ZGQxYzJiZDU2In0.cTn4WcVt-Pvq-ZkXtFFUN86QL23CN3OarB9jSaxFegE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
 
 ###
 
 PUT http://localhost:3333/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1MTA0MjEsImV4cCI6MTYxNTU5NjgyMSwic3ViIjoiYTA4ODIxOGMtYWQwNC00OTc5LWFmZjEtZmRkYjNmMTI1NGMzIn0.uZeYP8Z16W8LnDCIX2ciFgklg-ol9n4GrBP2EPuiW1U
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
 Content-Type: application/json
 
 {
-  "name": "Tigo",
-  "email": "best_email@gmail.com",
-  # "password": "abc",
-  # "password_confirmation": "abc",
-  "old_password": "abc"
+  "name": "Tigo2",
+  "email": "tetigo8@gmail.com",
+  "password": "abc",
+  "password_confirmation": "abc",
+  # "old_password": "12345678"
 }
+
+###
+
+GET http://localhost:3333/customers/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+
+###
+
+GET http://localhost:3333/customers/dbbffc22-1c49-4e49-beb8-89e026d90d93
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+
+###
+
+POST http://localhost:3333/customers
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+Content-Type: application/json
+
+{
+  "name": "Tetigo665",
+  "email": "tetigo665@gmail.com"
+}
+
+####
+
+PUT http://localhost:3333/customers/4a693ab7-d49a-4f1b-a482-004bb0b30497
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+Content-Type: application/json
+
+{
+  "name": "Tetigo778",
+  "email": "tetigo778@gmail.com"
+}
+
+###
+
+DELETE http://localhost:3333/customers/e4c87f5c-103d-4e78-a6df-ccb9cd0a2590
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+
+###
+

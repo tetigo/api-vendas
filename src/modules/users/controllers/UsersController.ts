@@ -6,6 +6,7 @@ class UsersController {
   public async index(req: Request, res: Response): Promise<Response> {
 
     // >>>>>>>>
+    console.log('tigo')
     console.log('>>> autenticado com res.locals', res.locals.userId)
     // console.log('>>> autenticado com req.user.id', req.user.id)
 

@@ -1,6 +1,6 @@
 import 'reflect-metadata' //precisa ser o primeiro
 import express, { NextFunction, Request, Response } from 'express'
-import "express-async-errors"
+import "express-async-errors" //precisa ser logo apos express
 import cors from 'cors'
 import routes from './routes'
 import {errors} from 'celebrate'
@@ -28,7 +28,7 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction)=>{
   }else{
     return res.status(500).json({
       status: 'error',
-      message: 'Internal Server Error'
+      message: `Internal Server Error\n${error.message}`
     })
   }
 })

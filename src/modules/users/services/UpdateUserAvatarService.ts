@@ -20,16 +20,13 @@ class UpdateUserAvatarService {
     if (!user) {
       throw new AppError('User not found')
     }
-    //@ts-ignore
     if (user.avatar) {
-      //@ts-ignore
       const userAvatarFilepath = path.join(uploadConfig.directory, user.avatar)
       const existsAvatar = await fs.promises.stat(userAvatarFilepath)
       if (existsAvatar) {
         await fs.promises.unlink(userAvatarFilepath)
       }
     }
-    //@ts-ignore
     user.avatar = avatar_filename
     await usersRepository.save(user)
     return user
