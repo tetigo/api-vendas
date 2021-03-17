@@ -34,7 +34,7 @@ Content-Type: application/json
 ###################################################
 
 GET http://localhost:3333/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1MDQ2MjgsImV4cCI6MTYxNTU5MTAyOCwic3ViIjoiODlmMTMwMzAtZGQ5NC00NmMxLTkxYjctYzM2ZGQxYzJiZDU2In0.hEktsJ5wQFAwaIdXkrzcE3gNAemPTndgLWQNbVGosQs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
 ###
 
 POST http://localhost:3333/users
@@ -108,8 +108,13 @@ Content-Type: application/json
 }
 
 ###
-
+#Nesse padrao sem query params retorna 15 por pagina default
 GET http://localhost:3333/customers/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
+
+###
+
+GET http://localhost:3333/customers/?page=1&per_page=1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
 
 ###

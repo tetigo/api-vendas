@@ -4,6 +4,7 @@ import "express-async-errors" //precisa ser logo apos express
 import cors from 'cors'
 import routes from './routes'
 import {errors} from 'celebrate'
+import {pagination} from 'typeorm-pagination'
 
 //esse uso de @ no path foi criado ligacao no tsconfig.json
 import AppError from '@shared/errors/AppError'
@@ -11,6 +12,11 @@ import '@shared/typeorm' // faz conexão com banco automaticamente
 import upload from '@config/upload'
 
 const app = express()
+
+//logo após instanciar o express
+//depois no serviço concatenamos na query_params ( ?page=1&per_page=15 )
+//vem configurado por padrao com 15 por pagina
+app.use(pagination)
 
 app.use(cors())
 app.use(express.json())
