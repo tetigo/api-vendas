@@ -1,8 +1,7 @@
-import {secret, expiresIn} from './secret'
 export default {
   jwt: {
-    secret,
-    expiresIn,
+    secret: process.env.APP_SECRET,
+    expiresIn : process.env.APP_EXPIRES_IN,
   }
 }
 

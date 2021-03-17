@@ -1,4 +1,5 @@
-import 'reflect-metadata' //precisa ser o primeiro
+import 'reflect-metadata' //precisa ser o primeiro a ser importado
+import 'dotenv/config'
 import express, { NextFunction, Request, Response } from 'express'
 import "express-async-errors" //precisa ser logo apos express
 import cors from 'cors'
