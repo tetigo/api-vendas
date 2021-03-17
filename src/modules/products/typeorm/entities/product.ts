@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import OrdersProducts from "@modules/orders/typeorm/entities/OrdersProducts";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 //pra funcionar precisar habilitar algumas flags no tsconfig.json
 // "strictPropertyInitialization": false,  /* Enable strict checking of property initialization in classes. */
@@ -12,6 +13,9 @@ class Product{
 
   @Column()
   name: string;
+
+  @OneToMany(()=>OrdersProducts, order_products=>order_products.product)
+  order_products: OrdersProducts[]
 
   @Column('decimal')
   price: number;

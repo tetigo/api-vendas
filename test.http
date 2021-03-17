@@ -110,12 +110,12 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3333/customers/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
 
 ###
 
 GET http://localhost:3333/customers/dbbffc22-1c49-4e49-beb8-89e026d90d93
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
 
 ###
 
@@ -143,6 +143,47 @@ Content-Type: application/json
 
 DELETE http://localhost:3333/customers/e4c87f5c-103d-4e78-a6df-ccb9cd0a2590
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+
+###
+
+POST http://localhost:3333/orders/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
+Content-Type: application/json
+
+{
+  "customer_id": "dbbffc22-1c49-4e49-beb8-89e026d90d93",
+  "products": [
+    {
+      "product_id": "b222680d-9abc-4ff1-9f2c-b4cc080a3571",
+      "quantity": 3
+    },
+    {
+      "product_id": "ea115c6b-23e4-461a-a1e0-9366c9ed8602",
+      "quantity": 20 
+    }
+  ]
+}
+
+
+###
+
+POST http://localhost:3333/orders/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
+Content-Type: application/json
+
+{
+  "customer_id": "dbbffc22-1c49-4e49-beb8-89e026d90d93",
+  "products": [
+    {
+      "product_id": "db3acf71-c2a7-4fe1-9d0b-ee8236d2e100",
+      "quantity": 5
+    }
+  ]
+}
+###
+
+GET http://localhost:3333/orders/a68bebe6-c48c-4c2f-903e-4ed4e7d905d7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
 
 ###
 

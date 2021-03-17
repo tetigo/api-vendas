@@ -1,5 +1,6 @@
 import Customer from "@modules/customers/typeorm/entities/Customer";
-import { Column, CreateDateColumn, Entity, Generated, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, Generated, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import OrdersProducts from "./OrdersProducts";
 
 
 
@@ -20,6 +21,15 @@ class Order{
         name: "customer_id"
     })
     customer: Customer
+
+    //cascade:true serve para que na hora de salvar uma order, ele já salve order_products tambem
+    //na hora que der um save em orders, todos os order_products relacionados vão ser salvos automaticamente
+    @OneToMany(
+        ()=>OrdersProducts, 
+        order_products => order_products.order,
+        {cascade: true}
+    )
+    order_products: OrdersProducts[]
 
     @CreateDateColumn()
     created_at: Date
