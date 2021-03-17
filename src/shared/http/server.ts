@@ -15,7 +15,8 @@ import upload from '@config/upload'
 const app = express()
 
 //logo após instanciar o express
-//depois no serviço concatenamos na query_params ( ?page=1&per_page=15 )
+//no serviço criamos querybuilder.paginate e interface
+//depois na consulta concatenamos na query_params ( ?page=1&per_page=15 )
 //vem configurado por padrao com 15 por pagina
 app.use(pagination)
 

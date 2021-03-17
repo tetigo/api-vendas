@@ -16,6 +16,10 @@ interface IRequest{
 class UpdateUserAvatarService {
   public async execute({ user_id, avatar_filename }: IRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepository)
+
+
+    console.log('avatar_filename', avatar_filename)
+
     let user = await usersRepository.findById(user_id)
     if (!user) {
       throw new AppError('User not found')

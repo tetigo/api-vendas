@@ -58,12 +58,11 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:3333/users/avatar
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTQ5NTY5MTQsImV4cCI6MTYxNTA0MzMxNCwic3ViIjoiNjY0YjYxZDctNDBhYi00MjIzLWE1MjItYzRhZjA0MGUxY2RlIn0.ANV3KBaXuv2cyAIOnmnKN_JWyw05HrNqEn_F8MGsZpI
-Content-Type: multipart/form-data; boundary=------WebKitFormBoundary7MA4YWxkTrZu0gW
+PATCH http://localhost:3333/users/avatar HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
+Content-Type: multipart/form-data; boundary="------WebKitFormBoundary7MA4YWxkTrZu0gW"
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
 Content-Disposition: form-data; name="avatar"; filename="simpson1.jpg"
-Content-Type: image/jpeg
 
 < ./simpson1.jpg
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
@@ -91,12 +90,12 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3333/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
 
 ###
 
 PUT http://localhost:3333/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU1ODgwMDEsImV4cCI6MTYxNTY3NDQwMSwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.QI_pLZdDqkiJv2ACGC4SsMXvKOve2V47z5KCYA9j_5Q
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTU5MzY3NDAsImV4cCI6MTYxNjAyMzE0MCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.RdlHSjxCDHzqQjzQ2Cr1edmSg3fZSfDm-YlQLpmTUGM
 Content-Type: application/json
 
 {

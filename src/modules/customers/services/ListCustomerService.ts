@@ -15,15 +15,10 @@ interface IPaginateCustomer{
 }
 
 class ListCustomerService {
-    // public async execute(): Promise<Customer[]> {
-    //     const customerRepository = getCustomRepository(CustomersRepository)
-    //     const customers = await customerRepository.find()
-    //     return customers
-    // }
-
     //alteracao para usar o pagination
     public async execute(): Promise<IPaginateCustomer> {
         const customerRepository = getCustomRepository(CustomersRepository)
+    //     const customers = await customerRepository.find()
         const customers = await customerRepository.createQueryBuilder().paginate()
         return customers as IPaginateCustomer
     }
