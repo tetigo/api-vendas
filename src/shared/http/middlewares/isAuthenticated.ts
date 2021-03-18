@@ -20,19 +20,19 @@ function isAuthenticated(req: Request, res: Response, next: NextFunction){
     throw new AppError('Invalid JWT Token', 403)
   }
   console.log('decodedToken', decodedToken)
-
+  
   //usando src/@types/Express/index.d.ts
   //precisa setar typeroots no tsconfig.json ficando assim:
   // "typeRoots": [
-  //   "@types",
-  //   "./node_modules/@types"
-  // ],                       /* List of folders to include type definitions from. */
-  // req.user.id = decodedToken.sub // parace não funcionar, quebra nessa linha
-
-  //usando objeto locals disponivel do response pra
-  //passar dados entre as requisições
-  //esse tá funcionando diretão sem precisar configurar nada
-  res.locals.userId = decodedToken.sub
+    //   "@types",
+    //   "./node_modules/@types"
+    // ],                       /* List of folders to include type definitions from. */
+    // req.user.id = decodedToken.sub // parace não funcionar, quebra nessa linha
+    
+    //usando objeto locals disponivel do response pra
+    //passar dados entre as requisições
+    //esse tá funcionando diretão sem precisar configurar nada
+    res.locals.userId = decodedToken.sub
   next()
 }
 export default isAuthenticated

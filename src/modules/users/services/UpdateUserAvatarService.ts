@@ -7,7 +7,7 @@ import path from 'path'
 import uploadConfig from '@config/upload'
 import fs from "fs"
 
-interface IRequest{
+interface IRequest {
   user_id: string,
   avatar_filename: string,
 }
@@ -19,16 +19,29 @@ class UpdateUserAvatarService {
 
 
     console.log('avatar_filename', avatar_filename)
+    console.log('directory', uploadConfig.directory)
+    console.log('path', path.join(uploadConfig.directory, avatar_filename))
+    console.log('user', user_id)
 
     let user = await usersRepository.findById(user_id)
     if (!user) {
       throw new AppError('User not found')
     }
-    if (user.avatar) {
-      const userAvatarFilepath = path.join(uploadConfig.directory, user.avatar)
-      const existsAvatar = await fs.promises.stat(userAvatarFilepath)
-      if (existsAvatar) {
-        await fs.promises.unlink(userAvatarFilepath)
+
+    console.log('user.avatar', user.avatar)
+
+    if (user.avatar !== undefined && user.avatar !== null) {
+      try {
+        const userAvatarFilepath = path.join(uploadConfig.directory, user.avatar)
+        const existsAvatar = await fs.promises.stat(userAvatarFilepath)
+        if (existsAvatar !== undefined) {
+          console.log('existavatar', existsAvatar)
+          await fs.promises.unlink(userAvatarFilepath)
+        } else {
+          user.avatar = ''
+        }
+      } catch (error) {
+        user.avatar = ''
       }
     }
     user.avatar = avatar_filename

@@ -4,12 +4,14 @@ import { classToClass } from "class-transformer";
 
 class UserAvatarController {
   public async update(req: Request, res: Response): Promise<Response> {
-    // console.log('testeinnnnn', req.headers['content-disposition']?.split('; ')[2])
-    // console.log('teeinnnnn', req.file.filename)
+    // console.log('req.file.filename', req.file.filename, 'res.locals.filename', res.locals.filename)
+    // console.log('req.file.path', req.file.path)
+    // let avatar_filename = req.headers['content-disposition']?.split('; ')[2].split('=')[1].replace('"','').replace('"','')
     const avatar_filename = req.file.filename
-    const user_id = res.locals.user_id
+    const user_id = res.locals.userId 
     const updateAvatarService = new UpdateUserAvatarService()
-    const user = updateAvatarService.execute({ user_id, avatar_filename })
+    //@ts-ignore
+    const user = await updateAvatarService.execute({ user_id, avatar_filename })
     return res.json(classToClass(user))
   }
 }

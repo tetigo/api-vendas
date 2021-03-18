@@ -6,7 +6,6 @@ import cors from 'cors'
 import routes from './routes'
 import {errors} from 'celebrate'
 import {pagination} from 'typeorm-pagination'
-
 //esse uso de @ no path foi criado ligacao no tsconfig.json
 import AppError from '@shared/errors/AppError'
 import '@shared/typeorm' // faz conexão com banco automaticamente
@@ -19,7 +18,6 @@ const app = express()
 //depois na consulta concatenamos na query_params ( ?page=1&per_page=15 )
 //vem configurado por padrao com 15 por pagina
 app.use(pagination)
-
 app.use(cors())
 app.use(express.json())
 app.use('/files', express.static(upload.directory))
