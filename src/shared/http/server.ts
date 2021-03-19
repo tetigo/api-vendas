@@ -10,8 +10,12 @@ import {pagination} from 'typeorm-pagination'
 import AppError from '@shared/errors/AppError'
 import '@shared/typeorm' // faz conexão com banco automaticamente
 import upload from '@config/upload'
+import rateLimiter from '@shared/http/middlewares/rateLimiter'
 
 const app = express()
+
+//logo apos instanciar express para nada acontecer caso tenha excedido o limite de requisições por segundo
+app.use(rateLimiter)
 
 //logo após instanciar o express
 //no serviço criamos querybuilder.paginate e interface
