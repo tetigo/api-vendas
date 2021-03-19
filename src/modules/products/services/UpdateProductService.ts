@@ -1,3 +1,4 @@
+import RedisCache from "@shared/cache/redisCache";
 import AppError from "@shared/errors/AppError";
 import { getCustomRepository } from "typeorm";
 import Product from "../typeorm/entities/product";
@@ -23,10 +24,13 @@ export default class UpdateProductService {
     if (productExists) {
       throw new AppError('There is already one product with this name')
     }
-
+    
     product.name = name
     product.price = price
     product.quantity = quantity
+    
+    const redisCache = new RedisCache()
+    await redisCache.invalidate('api-vendas-PRODUCT-LIST')
 
     await productsRepository.save(product)
 
