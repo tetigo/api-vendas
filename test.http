@@ -58,16 +58,21 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:3333/users/avatar HTTP/1.1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTYwMjQ4NjgsImV4cCI6MTYxNjExMTI2OCwic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.xs_8Mgb_nfCVfLcyXTAN9EElMCYRUuFsp4ElQktoaiY
-Content-Type: multipart/form-data; boundary=---HereGoes
 
----HereGoes
-Content-Disposition: form-data; name="avatar"; filename="simpson1.jpg"
+PATCH http://localhost:3333/users/avatar
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRhdGkiOiJwYXRhdGEiLCJpYXQiOjE2MTYxMTE5MjcsImV4cCI6MTYxNjE5ODMyNywic3ViIjoiZDdiODI2ZGQtMzJlNC00M2NmLTlkZjYtZDJkZTljMWEzZGQ5In0.zoUHKpoZxPvJVsLPFCazxZEH8HFhr48-rhDrsMbZGuM
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="avatar"; filename="simpson1.png"
 Content-Type: image/jpeg
 
 < ./simpson1.jpg
----HereGoes--
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 

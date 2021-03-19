@@ -36,12 +36,6 @@ usersRouter.patch(
   '/avatar',
   isAuthenticated,
   upload.single('avatar'),
-  function teste(req: Request, res: Response, next: NextFunction){
-    console.log('reqqqqqq', req.file)
-    // res.locals.userId = 'd7b826dd-32e4-43cf-9df6-d2de9c1a3dd9'
-    console.log(res.locals.userId)
-    next()
-  },
   userAvatarController.update,
   )
 

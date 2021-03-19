@@ -19,7 +19,7 @@ function isAuthenticated(req: Request, res: Response, next: NextFunction){
   if(!decodedToken){
     throw new AppError('Invalid JWT Token', 403)
   }
-  console.log('decodedToken', decodedToken)
+  // console.log('decodedToken', decodedToken)
   
   //usando src/@types/Express/index.d.ts
   //precisa setar typeroots no tsconfig.json ficando assim:
